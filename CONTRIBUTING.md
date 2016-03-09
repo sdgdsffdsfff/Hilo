@@ -1,47 +1,52 @@
 We appreciate you submit code to help perfect Hilo. And there are conventions to obey before you commit changes.
 
-Format of the commit message
+## Develop Pull Request
+* Send pull request to the ```dev``` branch
+* Only accepted committing source code(but not build code)
+* Run ```gulp test```, make sure all tests passed
+* Format of the commit message
 
+    ```
+    <type>: <subject>
+    ```
+
+    Seven types are allowed when committing.
+    This describes the kind of change that this commit is providing.
+
+    + feat (feature)
+    + fix (bug fix)
+    + docs (documentation)
+    + style (formatting, missing semi colons, …)
+    + refactor
+    + test (when adding missing tests)
+    + chore (maintain)
+
+    etc:
+
+    ```
+    fix: view.js WebGLRender bug
+    docs: update README.md
+    ```
+
+
+## Translation Pull Request
+We use ```jsdoc``` to generate api doc, so if code comment is ready, the doc will be ok.
+
+1. Checkout the ```doc-translation``` branch.
+2. We support Chinese comment version with ```@language=zh```, you can translate it to English version( ```@language=en```).
+
+  ```
+/**
+ * @language=en
+ * @namespace Hilo的基础核心方法集合。
+ * @static
+ * @module hilo/core/Hilo
+ */
+/**
+ * @language=zh
+ * @namespace Hilo的基础核心方法集合。
+ * @static
+ * @module hilo/core/Hilo
+ */
 ```
 
-<type>(<scope>): <subject>
-<BLANK LINE>
-<body>
-<BLANK LINE>
-<footer>
-
-```
-
-Any line of the commit message cannot be longer 100 characters! This allows the message to be easier to read on github as well as in various git tools.
-
-
-Seven types are allowed when committing.
-This describes the kind of change that this commit is providing.
-
-+ feat (feature)
-+ fix (bug fix)
-+ docs (documentation)
-+ style (formatting, missing semi colons, …)
-+ refactor
-+ test (when adding missing tests)
-+ chore (maintain)
-
-etc:
-
-```
-
-   fix: view.js WebGLRender bug
-
-   when run on some android phones,we found it has compatibility problem
-
-   Closes #392
-   Breaks  hilo.render api, hilo.renderGL should be used instead
-
-```
-
-
-More details: [AngularJS Git Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#https://github.com/hiloteam/Hilo/wiki/Commit-Message-Conventions/_edit#)
-
-And git tools —— commitizen：
-
-[commitizen](https://github.com/commitizen/cz-cli)
